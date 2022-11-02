@@ -14,9 +14,9 @@ public class Singer implements Comparable<Singer>{
 
     @Override
     public String toString (){
-        return "Name: " + this.Name +
-                "\tRating: " + this.Rating +
-                "\tRealeased Albums: " + this.Album_count;
+        return "Name: " + this.Name + "," +
+                " Rating: " + this.Rating + "," +
+                " Realeased Albums: " + this.Album_count;
     }
 
     public int compareTo(Singer singer) {

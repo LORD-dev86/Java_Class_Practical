@@ -1,7 +1,6 @@
 package pkg_Singer;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.Scanner;
 
 public class SingerRecord {
@@ -12,15 +11,16 @@ public class SingerRecord {
         System.out.println("Input information of singers: ");
 
         for (int i = 0; i < singers.length; i++) {
-            System.out.print("Name of " + (i + 1) + " singer");
-            singers[i].Name = sc.nextLine();
+            System.out.print("Name of " + (i + 1) + " singer: ");
+            String tName = sc.nextLine();
 
-            System.out.print("Rating of " + (i + 1) + " singer");
-            singers[i].Rating = sc.nextDouble();
+            System.out.print("Rating of " + (i + 1) + " singer: ");
+           double tRating = sc.nextDouble();
 
-            System.out.print("Released albums of " + (i + 1) + " singer");
-            singers[i].Album_count = sc.nextInt();
+            System.out.print("Released albums of " + (i + 1) + " singer: ");
+            int tAlbum_count = sc.nextInt();
 
+            singers[i] = new Singer(tName, tRating, tAlbum_count);
             sc.nextLine(); //clearing buff
         }
 
@@ -69,4 +69,21 @@ public class SingerRecord {
     public static void sortRevName(Singer[] singers) {
         Arrays.sort(singers, (s1, s2) -> s2.Name.compareTo(s1.Name));
     }
+
+    public static int searchName (Singer[] singers, String sName) {
+        for (int i = 0; i < singers.length; i++) {
+            if (singers[i].Name.equalsIgnoreCase(sName))
+                return i;
+        }
+        return -1;
+    }
+
+    public static void ReflRating (Singer singer, double nRating) {
+        singer.Rating = nRating;
+        System.out.println("------");
+        System.out.println("Reflection oblect: \n" + singer);
+        System.out.println("------");
+    }
+
+
 }
