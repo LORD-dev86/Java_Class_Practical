@@ -80,10 +80,6 @@ public class SingerRecord {
 
     public static void ReflRating (Singer singer, double nRating) {
         singer.Rating = nRating;
-        System.out.println("------");
         System.out.println("Reflection oblect: \n" + singer);
-        System.out.println("------");
     }
-
-
 }
